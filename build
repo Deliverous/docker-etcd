@@ -1,3 +1,0 @@
-#!/bin/bash
-docker run deliverous/gobuild github.com/coreos/etcd | tar -xv 
-docker build -t deliverous/etcd .
