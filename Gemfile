@@ -14,3 +14,4 @@ gem 'simplecov', :require => false
 gem 'minitest'
 gem 'minitest-colorize'
 gem 'docker-api', :require => 'docker'
+gem 'rest-client'

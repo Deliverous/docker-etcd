@@ -1,8 +1,6 @@
 require "minitest/autorun"
-require "minitest"
 require 'docker'
-require 'net/http'
-require 'uri'
+require 'rest_client'
 
 
 class Container
@@ -22,29 +20,6 @@ class Container
 
     def address
         @container.json['NetworkSettings']['IPAddress']
-    end
-end
-
-class HttpConnection
-    def initialize(container, options={})
-        @container = container
-        @port = options[:port] || 80
-        @http = Net::HTTP.new @container.address, @port
-    end
-
-    def request(name, options={})
-        data = options[:data]
-        r = Net::HTTPGenericRequest.new(name, (data ? true : false), true, options[:path], options[:header])
-        #r.body = data
-        res = @http.request r, "polop"
-        puts res.body.inspect
-        #puts "#{name} #{options[:data]}"
-        #@http.send_request(name, options[:path], options[:data], options[:header])
-        res
-    end
-
-    def get(path)
-        request('GET', path: path).body
     end
 end
 
@@ -75,13 +50,16 @@ describe "Etcd" do
 
     it "must have the correct version" do
         sleep 1
-        HttpConnection.new(@etcd, port: 4001).get('/version').must_equal 'etcd 0.5.0-alpha.1'
+        RestClient.get(url('/version')).body.must_equal 'etcd 0.5.0-alpha.1'
     end
 
     it "must store and restore value" do
         sleep 1
-        connection = HttpConnection.new(@etcd, port: 4001)
-        puts connection.request('PUT', path: '/v2/keys/mykey', data: 'this is awesome').inspect
-        connection.get('/v2/keys/mykey').must_equal 'this is awesome'
+        RestClient.put(url('/v2/keys/mykey'), 'this is awesome')
+        RestClient.get(url('/v2/keys/mykey')).body.must_equal 'this is awesome'
+    end
+
+    def url(path)
+        "http://#{@etcd.address}:4001#{path}"
     end
 end
