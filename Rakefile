@@ -12,3 +12,13 @@ Rake::DockerLib.new("registry.deliverous.net/deliverous/etcd", version: '0.5.0-a
         args '-peer-addr 127.0.0.1:7001 -addr 127.0.0.1:4001'
     end
 end
+
+task :t do
+    ruby "#{Dir.glob('./test/**/test*.rb').map { |file| "\"#{file}\""}.join(" ")}" do |ok, status|
+            if !ok && status.respond_to?(:signaled?) && status.signaled?
+              raise SignalException.new(status.termsig)
+            elsif !ok
+              fail "Command failed with status (#{status.exitstatus})"
+            end
+          end
+end
