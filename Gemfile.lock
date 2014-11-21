@@ -16,7 +16,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     archive-tar-minitar (0.5.2)
-    docile (1.1.5)
     docker-api (1.15.0)
       archive-tar-minitar
       excon (>= 0.38.0)
@@ -27,17 +26,11 @@ GEM
     minitest (5.4.3)
     minitest-colorize (0.0.5)
       minitest (>= 2.0)
-    multi_json (1.10.1)
     netrc (0.8.0)
     rake (10.3.2)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    simplecov (0.9.1)
-      docile (~> 1.1.0)
-      multi_json (~> 1.0)
-      simplecov-html (~> 0.8.0)
-    simplecov-html (0.8.0)
 
 PLATFORMS
   ruby
@@ -50,4 +43,3 @@ DEPENDENCIES
   rake-docker!
   rake-utils!
   rest-client
-  simplecov
