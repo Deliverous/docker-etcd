@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.1.4"
 
-gem 'docker-api', :require => 'docker'
+gem 'docker-tdd', :git => 'git@github.com:Deliverous/docker-tdd.git'
 gem 'minitest'
 gem 'minitest-colorize'
 gem 'rake'

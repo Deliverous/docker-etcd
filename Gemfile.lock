@@ -1,4 +1,12 @@
 GIT
+  remote: git@github.com:Deliverous/docker-tdd.git
+  revision: c5168fda52c806495b1d9521be815a8aee72ea01
+  specs:
+    docker-tdd (0.0.1)
+      docker-api
+      minitest
+
+GIT
   remote: git@github.com:Deliverous/rake-docker.git
   revision: e747a7343a2e1932fd24a9159c4fe7bd5db7ec28
   specs:
@@ -36,7 +44,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  docker-api
+  docker-tdd!
   minitest
   minitest-colorize
   rake
