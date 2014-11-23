@@ -8,9 +8,10 @@ GIT
 
 GIT
   remote: git@github.com:Deliverous/rake-docker.git
-  revision: e747a7343a2e1932fd24a9159c4fe7bd5db7ec28
+  revision: 36b7f11251427f43ab94351dbab02ec115d328bb
   specs:
     rake-docker (0.0.1)
+      climate_control
       rake
 
 GIT
@@ -23,12 +24,21 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.1.8)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
     archive-tar-minitar (0.5.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
     docker-api (1.15.0)
       archive-tar-minitar
       excon (>= 0.38.0)
       json
     excon (0.41.0)
+    i18n (0.6.11)
     json (1.8.1)
     mime-types (2.4.3)
     minitest (5.4.3)
@@ -39,6 +49,9 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    thread_safe (0.3.4)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby

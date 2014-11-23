@@ -7,7 +7,7 @@ describe "Etcd" do
     include DockerTdd::ContainerPlugin
 
     def containers
-        @etcd = DockerTdd::Container.new "registry.deliverous.net/deliverous/etcd:0.5.0-alpha.1-1", args: ["-bind-addr", "0.0.0.0:4001"], boottime: 1
+        @etcd = DockerTdd::Container.new ENV['DOCKER_IMAGE'], args: ["-bind-addr", "0.0.0.0:4001"], boottime: 1
     end
 
     it "must have the correct version" do
