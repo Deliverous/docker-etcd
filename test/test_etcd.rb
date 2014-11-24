@@ -11,12 +11,12 @@ describe "Etcd" do
     end
 
     it "must have the correct version" do
-        RestClient.get(url('/version')).body.must_equal 'etcd 0.5.0-alpha.1'
+        RestClient.get(url('/version')).body.must_equal 'etcd 0.5.0-alpha.3'
     end
 
     it "must store and restore value" do
         RestClient.put(url('/v2/keys/message'), 'value=the value')
-        RestClient.get(url('/v2/keys/message')).body.must_equal "{\"action\":\"get\",\"node\":{\"key\":\"/message\",\"value\":\"the value\",\"modifiedIndex\":4,\"createdIndex\":4}}\n"
+        RestClient.get(url('/v2/keys/message')).body.must_equal "{\"action\":\"get\",\"node\":{\"key\":\"/message\",\"value\":\"the value\",\"modifiedIndex\":3,\"createdIndex\":3}}\n"
     end
 
     def url(path)
