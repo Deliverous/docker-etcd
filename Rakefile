@@ -5,7 +5,7 @@ EtcdVersion = "v0.5.0-alpha.3"
 
 Rake::DockerLib.new("deliverous/etcd", version: "#{EtcdVersion}-1") do
     prepare do
-        Go::compile(repository: 'git@github.com:Deliverous/etcd.git',
+        Go::compile(repository: 'git@github.com:deliverous/etcd.git',
                     package: 'github.com/coreos/etcd',
                     tag: EtcdVersion,
                     workspace: "#{Dir.pwd}/go",
