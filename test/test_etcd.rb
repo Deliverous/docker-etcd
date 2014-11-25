@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'docker-tdd'
 require 'rest_client'
+require 'json'
 
 
 describe "Etcd" do
@@ -16,7 +17,7 @@ describe "Etcd" do
 
     it "must store and restore value" do
         RestClient.put(url('/v2/keys/message'), 'value=the value')
-        RestClient.get(url('/v2/keys/message')).body.must_equal "{\"action\":\"get\",\"node\":{\"key\":\"/message\",\"value\":\"the value\",\"modifiedIndex\":4,\"createdIndex\":4}}\n"
+        JSON.parse(RestClient.get(url('/v2/keys/message')).body)['node']['value'].must_equal "the value"
     end
 
     def url(path)
