@@ -15,6 +15,14 @@ GIT
       rake
 
 GIT
+  remote: git@github.com:Deliverous/rake-git.git
+  revision: 20aa00240357675a2ef931e67463ce2af7961818
+  specs:
+    rake-git (0.0.1)
+      colorize
+      rake
+
+GIT
   remote: git@github.com:Deliverous/rake-utils.git
   revision: 883352cfcafe221ceecaec66c60d74a0c9f6b6d7
   specs:
@@ -33,6 +41,7 @@ GEM
     archive-tar-minitar (0.5.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
+    colorize (0.7.3)
     docker-api (1.15.0)
       archive-tar-minitar
       excon (>= 0.38.0)
@@ -62,5 +71,6 @@ DEPENDENCIES
   minitest-colorize
   rake
   rake-docker!
+  rake-git!
   rake-utils!
   rest-client
