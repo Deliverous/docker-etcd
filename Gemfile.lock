@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:Deliverous/docker-tdd.git
-  revision: 5211c5334d9d7dbc84353101ff18a4297a92fbf9
+  revision: 11e62611a6b2d92b37cb521dc127894495dbc3a9
   specs:
     docker-tdd (0.0.1)
       docker-api
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: git@github.com:Deliverous/rake-utils.git
-  revision: 883352cfcafe221ceecaec66c60d74a0c9f6b6d7
+  revision: 6339e6a3316a3ce5879987cadae5cc750c21895e
   specs:
     rake-utils (0.0.1)
       rake
@@ -53,8 +53,8 @@ GEM
     minitest (5.4.3)
     minitest-colorize (0.0.5)
       minitest (>= 2.0)
-    netrc (0.8.0)
-    rake (10.4.0)
+    netrc (0.9.0)
+    rake (10.4.1)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)

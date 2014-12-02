@@ -12,7 +12,7 @@ describe "Etcd" do
     end
 
     it "must have the correct version" do
-        RestClient.get(url('/version')).body.must_equal 'etcd 0.5.0-alpha.1'
+        RestClient.get(url('/version')).body.must_equal 'etcd 0.5.0-alpha.4'
     end
 
     it "must store and restore value" do
@@ -21,6 +21,6 @@ describe "Etcd" do
     end
 
     def url(path)
-        "http://#{@etcd.address}:4001#{path}"
+        "http://#{@etcd.address}:2379#{path}"
     end
 end
