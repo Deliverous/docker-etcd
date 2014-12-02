@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: git@github.com:Deliverous/rake-utils.git
-  revision: 6339e6a3316a3ce5879987cadae5cc750c21895e
+  revision: e481c5de17d0e2e1886b8b444842df167629985d
   specs:
     rake-utils (0.0.1)
       rake
