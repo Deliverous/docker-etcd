@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby "2.1.5"
-
 gem 'docker-tdd', :git => 'git@github.com:Deliverous/docker-tdd.git'
 gem 'minitest'
 gem 'minitest-colorize'
